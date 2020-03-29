@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 29 mars 2020 à 18:37
+-- Généré le : Dim 29 mars 2020 à 19:33
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.2.27
 
@@ -128,14 +128,15 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (53, 6, 'created_at', 'timestamp', 'Created At', 1, 1, 1, 0, 0, 0, NULL, 10),
 (54, 6, 'updated_at', 'timestamp', 'Updated At', 1, 0, 0, 0, 0, 0, NULL, 11),
 (55, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, NULL, 12),
-(56, 8, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(57, 8, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, '{}', 2),
-(58, 8, 'capacite', 'text', 'Capacite', 0, 1, 1, 1, 1, 1, '{}', 3),
-(59, 8, 'recu', 'text', 'Recu', 0, 1, 1, 1, 1, 1, '{}', 4),
-(60, 8, 'lat', 'text', 'Lat', 0, 1, 1, 1, 1, 1, '{}', 5),
-(61, 8, 'leng', 'text', 'Leng', 0, 1, 1, 1, 1, 1, '{}', 6),
-(62, 8, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 0, 0, 0, '{}', 7),
-(63, 8, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
+(64, 9, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(65, 9, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, '{}', 2),
+(66, 9, 'capacite', 'text', 'Capacite', 0, 1, 1, 1, 1, 1, '{}', 3),
+(67, 9, 'recu', 'text', 'Recu', 0, 1, 1, 1, 1, 1, '{}', 4),
+(68, 9, 'lat', 'text', 'Lat', 0, 1, 1, 1, 1, 1, '{}', 5),
+(69, 9, 'leng', 'text', 'Leng', 0, 1, 1, 1, 1, 1, '{}', 6),
+(70, 9, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
+(71, 9, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(72, 9, 'phone', 'text', 'Phone', 0, 1, 1, 1, 1, 1, '{}', 9);
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2020-03-25 14:32:18', '2020-03-25 14:32:18'),
 (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2020-03-25 14:32:20', '2020-03-25 14:32:20'),
 (7, 'lab', 'lab', 'Lab', 'Labs', NULL, 'App\\Lab', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-03-25 14:52:05', '2020-03-25 14:52:05'),
-(8, 'labs', 'labs', 'Lab', 'Labs', NULL, 'App\\Lab', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-03-25 14:56:30', '2020-03-25 14:56:30');
+(9, 'labs', 'labs', 'Lab', 'Labs', NULL, 'App\\Lab', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-03-29 16:25:08', '2020-03-29 16:25:08');
 
 -- --------------------------------------------------------
 
@@ -204,17 +205,18 @@ CREATE TABLE `labs` (
   `lat` float DEFAULT 0,
   `leng` float DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `labs`
 --
 
-INSERT INTO `labs` (`id`, `name`, `capacite`, `recu`, `lat`, `leng`, `created_at`, `updated_at`) VALUES
-(1, 'khalil', 15, 12, 35.8283, 10.6881, '2020-03-25 15:03:40', '2020-03-25 16:38:54'),
-(2, 'enit', 20, 12, 34.8283, 11.6881, '2020-03-25 15:58:47', '2020-03-25 15:58:47'),
-(3, 'ensi', 12, 3, 35.7653, 10.8065, '2020-03-25 16:40:59', '2020-03-25 16:40:59');
+INSERT INTO `labs` (`id`, `name`, `capacite`, `recu`, `lat`, `leng`, `created_at`, `updated_at`, `phone`) VALUES
+(1, 'khalil', 15, 12, 35.8283, 10.6881, '2020-03-25 15:03:00', '2020-03-29 16:32:38', 12365486),
+(2, 'enit', 20, 12, 34.8283, 11.6881, '2020-03-25 15:58:00', '2020-03-29 16:32:30', 58647581),
+(3, 'ensi', 12, 3, 35.7653, 10.8065, '2020-03-25 16:40:00', '2020-03-29 16:32:19', 995824852);
 
 -- --------------------------------------------------------
 
@@ -268,7 +270,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-03-25 14:32:01', '2020-03-25 14:52:25', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2020-03-25 14:32:01', '2020-03-25 14:52:25', 'voyager.bread.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2020-03-25 14:32:25', '2020-03-25 14:52:25', 'voyager.hooks', NULL),
-(16, 1, 'Labs', '', '_self', 'voyager-lab', '#000000', NULL, 1, '2020-03-25 14:56:31', '2020-03-25 14:57:34', 'voyager.labs.index', 'null');
+(17, 1, 'Labs', '', '_self', 'voyager-lab', '#000000', NULL, 1, '2020-03-29 16:25:09', '2020-03-29 16:25:42', 'voyager.labs.index', 'null');
 
 -- --------------------------------------------------------
 
@@ -407,11 +409,11 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (44, 'edit_lab', 'lab', '2020-03-25 14:52:05', '2020-03-25 14:52:05'),
 (45, 'add_lab', 'lab', '2020-03-25 14:52:05', '2020-03-25 14:52:05'),
 (46, 'delete_lab', 'lab', '2020-03-25 14:52:05', '2020-03-25 14:52:05'),
-(47, 'browse_labs', 'labs', '2020-03-25 14:56:31', '2020-03-25 14:56:31'),
-(48, 'read_labs', 'labs', '2020-03-25 14:56:31', '2020-03-25 14:56:31'),
-(49, 'edit_labs', 'labs', '2020-03-25 14:56:31', '2020-03-25 14:56:31'),
-(50, 'add_labs', 'labs', '2020-03-25 14:56:31', '2020-03-25 14:56:31'),
-(51, 'delete_labs', 'labs', '2020-03-25 14:56:31', '2020-03-25 14:56:31');
+(52, 'browse_labs', 'labs', '2020-03-29 16:25:09', '2020-03-29 16:25:09'),
+(53, 'read_labs', 'labs', '2020-03-29 16:25:09', '2020-03-29 16:25:09'),
+(54, 'edit_labs', 'labs', '2020-03-29 16:25:09', '2020-03-29 16:25:09'),
+(55, 'add_labs', 'labs', '2020-03-29 16:25:09', '2020-03-29 16:25:09'),
+(56, 'delete_labs', 'labs', '2020-03-29 16:25:09', '2020-03-29 16:25:09');
 
 -- --------------------------------------------------------
 
@@ -474,11 +476,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (44, 1),
 (45, 1),
 (46, 1),
-(47, 1),
-(48, 1),
-(49, 1),
-(50, 1),
-(51, 1);
+(52, 1),
+(53, 1),
+(54, 1),
+(55, 1),
+(56, 1);
 
 -- --------------------------------------------------------
 
@@ -799,13 +801,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `failed_jobs`
@@ -829,7 +831,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
@@ -847,7 +849,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT pour la table `posts`

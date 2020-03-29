@@ -1018,7 +1018,7 @@
                 console.log(lab);
                 var marker = L.marker([lab.lat,lab.leng], markerOptions); 
                 // Adding popup to the marker
-                marker.bindPopup('name: '+lab.name+'</br>'+'capacite: '+lab.capacite+'</br> recu: '+lab.recu).openPopup();
+                marker.bindPopup('name: '+lab.name+'</br>'+'capacite: '+lab.capacite+'</br> recu: '+lab.recu+'</br> phone: '+lab.phone).openPopup();
                 // Adding marker to the map
                 marker.addTo(map);
             @endforeach
